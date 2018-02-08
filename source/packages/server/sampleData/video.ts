@@ -1,21 +1,13 @@
-const VIDEOS = [
-  {
-    id: 'a',
-    name: 'Create a GraphQL Schema',
-    watched: true,
-  },
-  {
-    id: 'b',
-    name: 'Ember.js CLI',
-    watched: false,
-  },
-]
+import * as fs from 'fs'
+import { config } from '../config'
 
 class VideoSampleData {
 
   private videos: any = []
   constructor() {
-    this.videos = VIDEOS
+    console.info('file name', config.sampleDataFile)
+    const data = fs.readFileSync(config.sampleDataFile, 'utf8')
+    this.videos = JSON.parse(data)
   }
 
   getVideos() {

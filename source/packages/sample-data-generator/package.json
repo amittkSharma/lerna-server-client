@@ -1,0 +1,27 @@
+{
+  "name": "sample-data-generator",
+  "version": "0.0.1",
+  "description": "Package for generating sample data",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && npm run lint",
+    "prestart": "npm run build",
+    "start": "node dist/index.js | bunyan --color -o short",
+    "debug": "node --inspect dist/index.js | bunyan --color -o short",
+    "lint": "tslint --exclude 'node_modules/**/*.ts' '**/*.ts'"
+  },
+  "keywords": [],
+  "author": "Amit Sharma",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "9.4.2",
+    "tslint": "5.8.0",
+    "typescript": "2.6.2"
+  },
+  "dependencies": {
+    "bunyan": "1.8.12",
+    "node": "^9.5.0",
+    "tslib": "1.8.1",
+    "uuid": "^3.2.1"
+  }
+}
