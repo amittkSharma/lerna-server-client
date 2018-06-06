@@ -3,7 +3,13 @@
 		"lerna": "^2.8.0"
 	},
 	"scripts": {
-		"prestart": "lerna bootstrap",
-		"start": "lerna run start  --parallel"
+		"watch": "lerna run watch",
+		"build": "lerna run build",
+		"test": "lerna run test",
+		"changelog": "lerna run changelog",
+		"release": "lerna run release",
+		"postinstall": "lerna bootstrap",
+		"start:server": "cd packages/server && npm start",
+		"start:client": "cd packages/client && npm start"
 	}
 }
