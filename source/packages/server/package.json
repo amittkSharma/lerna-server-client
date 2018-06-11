@@ -28,7 +28,7 @@
   "dependencies": {
     "@types/express-graphql": "0.0.35",
     "aws-sdk": "2.179.0",
-    "body-parser": "1.18.2",
+    "body-parser": "^1.18.2",
     "bunyan": "1.8.12",
     "compression": "1.7.1",
     "cors": "2.8.4",
