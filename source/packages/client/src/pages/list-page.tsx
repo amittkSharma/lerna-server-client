@@ -1,25 +1,24 @@
 import * as React from 'react'
-import { QueryComponent, QueryResult } from '../components/query'
-import gql from 'graphql-tag'
+import { QueryResult, Query } from 'react-apollo'
+import { ListView } from '../components/list-view'
+import { VIDEO_QUERY  } from './list-page-gql'
+import { GetAllVideosQuery } from '../api/gql-query-interfaces'
 
-const query = gql`
-  query {
-    videos {
-      id
-      name
-      watched
-    }
-  }
-`
-
-export class ListPage extends React.Component<any, any> {
-  render() {
-    return (
-      <QueryComponent query={query}>
-        {(data: QueryResult | undefined) => (
-          <p>{JSON.stringify(data)} </p>
-        )}
-      </QueryComponent>
-    )
-  }
-}
+export const ListPage = () => (
+  <Query query={VIDEO_QUERY}>
+    {({data}: QueryResult<GetAllVideosQuery>) => {
+      const videos = data && data.videos
+      console.log(`All videos ${JSON.stringify(videos, null, 2)}`)
+      if (data && videos) {
+        return (
+          <div>
+            <main className="team-vs-team">
+              <ListView data={videos} />
+            </main>
+          </div>
+        )
+      }
+      return <div>No Data</div>
+    }}
+  </Query>
+)
