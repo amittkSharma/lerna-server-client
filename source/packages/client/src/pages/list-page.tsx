@@ -8,7 +8,6 @@ export const ListPage = () => (
   <Query query={VIDEO_QUERY}>
     {({data}: QueryResult<GetAllVideosQuery>) => {
       const videos = data && data.videos
-      console.log(`All videos ${JSON.stringify(videos, null, 2)}`)
       if (data && videos) {
         return (
           <div>
