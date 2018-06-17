@@ -36,7 +36,10 @@ const videoType = new GraphQLObjectType({
            type: GraphQLInt,
            description: 'Number of time video is watched',
        },
-
+       description: {
+           type: GraphQLString,
+           description: 'Basic information about the video',
+       },
     },
 })
 
@@ -115,6 +118,10 @@ const videoInputType = new GraphQLInputObjectType({
         watched: {
             type: new GraphQLNonNull(GraphQLInt),
             description: 'Whether video is watched or not',
+        },
+        description: {
+            type: new GraphQLNonNull(GraphQLString),
+            description: 'Description about the video',
         },
     },
 })

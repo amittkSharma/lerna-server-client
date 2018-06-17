@@ -6,6 +6,7 @@ export const VIDEO_QUERY = gql`
       id
       name
       watched
+      description
     }
   }
 `

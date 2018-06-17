@@ -10,5 +10,7 @@ export interface GetAllVideosQuery {
     name: string | null,
     // Number of time video is watched
     watched: number | null,
+    // Basic information about the video
+    description: string | null,
   } | null > | null,
 };
