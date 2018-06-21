@@ -3,8 +3,9 @@
 		"lerna": "^2.8.0"
 	},
 	"scripts": {
+		"prebuild": "lerna bootstrap --hoist",
 		"watch": "lerna run watch",
-		"build": "lerna run build",
+		"build": "lerna run build --stream",
 		"test": "lerna run test",
 		"changelog": "lerna run changelog",
 		"release": "lerna run release",
