@@ -1,18 +1,10 @@
 import * as React from 'react'
-import { List, ListItem, ListItemText } from '@material-ui/core'
+import { Button } from 'antd'
 
 export interface ListViewProps {
   data: any[]
 }
 
-export const ListView = (props: ListViewProps) => (
-  <List>
-    {
-      props.data.map((x: any) => (
-        <ListItem key={x.id}>
-          <ListItemText primary={x.name}  secondary={x.watched} />
-        </ListItem>
-      ))
-    }
-  </List>
+export const ListView = (_props: ListViewProps) => (
+  <Button type="primary">Button</Button>
 )

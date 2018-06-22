@@ -1,0 +1,15 @@
+node_modules/
+bower_components/
+coverage/
+json/
+.sass-cache/
+.tmp/
+dist/
+build/
+*.swp
+.DS_Store
+Thumbs.db
+"* - Copy/"
+.vscode/
+jest.json
+mocha.json
