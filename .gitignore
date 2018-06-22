@@ -6,7 +6,6 @@ json/
 .tmp/
 dist/
 build/
-public/
 platforms/
 plugins/
 *.swp
