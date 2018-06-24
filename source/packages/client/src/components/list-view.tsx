@@ -19,11 +19,11 @@ interface ColumnPropsType {
 function getColumns(schema: Schema[]): Array<ColumnProps<ColumnPropsType>> {
   const cols: Array<ColumnProps<ColumnPropsType>> = []
   schema.map((sch: Schema) => {
-    console.log(sch)
     cols.push({
       title: sch.name,
       dataIndex: sch.propName,
-
+      defaultSortOrder: 'descend',
+      sorter: (a, b) => a[sch.propName].length - b[sch.propName].length,
     })
   })
   return cols
