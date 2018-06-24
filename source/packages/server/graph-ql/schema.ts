@@ -8,18 +8,6 @@ import { GraphQLSchema,
          GraphQLInputObjectType } from 'graphql'
 import { videoSampleData } from '../sampleData/video'
 
-// // GraphQL schema
-// export const schema = buildSchema(`
-//     type Query {
-//         message: String
-//     }
-// `);
-
-// // Root resolver
-// export const resolvers = {
-//     message: () => 'Hello Jane'
-// };
-
 const videoType = new GraphQLObjectType({
     name: 'Video',
     description: 'Object for the video',
@@ -35,6 +23,10 @@ const videoType = new GraphQLObjectType({
        watched: {
            type: GraphQLInt,
            description: 'Number of time video is watched',
+       },
+       url: {
+           type: GraphQLString,
+           description: 'Information about the download link',
        },
        description: {
            type: GraphQLString,

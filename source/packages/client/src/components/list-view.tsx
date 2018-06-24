@@ -1,10 +1,45 @@
 import * as React from 'react'
-import { Button } from 'antd'
+import { Table } from 'antd'
+import { Schema } from '../models/core'
+// tslint:disable-next-line:no-submodule-imports
+import { ColumnProps } from 'antd/lib/table/interface'
 
 export interface ListViewProps {
   data: any[]
+  schema: any[]
 }
 
-export const ListView = (_props: ListViewProps) => (
-  <Button type="primary">Button</Button>
+interface ColumnPropsType {
+  title: string
+  dataIndex: string
+  className?: string
+  render?: React.ReactNode
+}
+
+function getColumns(schema: Schema[]): Array<ColumnProps<ColumnPropsType>> {
+  const cols: Array<ColumnProps<ColumnPropsType>> = []
+  schema.map((sch: Schema) => {
+    console.log(sch)
+    cols.push({
+      title: sch.name,
+      dataIndex: sch.propName,
+
+    })
+  })
+  return cols
+}
+
+function getRowKey(item: any): string {
+  return item.id
+}
+
+export const ListView = (props: ListViewProps) => (
+  <Table
+    rowKey={getRowKey}
+    columns={getColumns(props.schema)}
+    dataSource={props.data}
+    bordered={true}
+    title={() => 'Header'}
+    footer={() => 'Footer'}
+  />
 )

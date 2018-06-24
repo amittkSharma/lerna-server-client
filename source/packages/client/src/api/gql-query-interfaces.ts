@@ -12,5 +12,7 @@ export interface GetAllVideosQuery {
     watched: number | null,
     // Basic information about the video
     description: string | null,
+    // Information about the download link
+    url: string | null,
   } | null > | null,
 };
