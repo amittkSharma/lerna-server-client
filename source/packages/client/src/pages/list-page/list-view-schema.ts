@@ -1,4 +1,4 @@
-import { Schema  } from '../models/core'
+import { Schema  } from '../../models/core'
 
 export const VideoSchema: Schema[] = [
   {

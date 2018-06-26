@@ -17,22 +17,20 @@ export class DialogView extends React.Component<DialogViewProps, never> {
 
   render() {
     return (
-      <div>
-        <Modal
-          visible={this.props.visible}
-          title="Title"
-          onOk={this.props.handleOk}
-          onCancel={this.props.handleCancel}
-          footer={[
-            <Button key="back" onClick={this.props.handleCancel}>Return</Button>,
-            <Button key="submit" type="primary" onClick={this.props.handleOk}>
-              Submit
-            </Button>,
-          ]}
-        >
-          {this.props.children}
-        </Modal>
-      </div>
+      <Modal
+        visible={this.props.visible}
+        title="Title"
+        onOk={this.props.handleOk}
+        onCancel={this.props.handleCancel}
+        footer={[
+          <Button key="back" onClick={this.props.handleCancel}>Return</Button>,
+          <Button key="submit" type="primary" onClick={this.props.handleOk}>
+            Submit
+          </Button>,
+        ]}
+      >
+        {this.props.children}
+      </Modal>
     )
   }
 }

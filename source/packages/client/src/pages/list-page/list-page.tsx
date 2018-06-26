@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { QueryResult, Query } from 'react-apollo'
 import { Button } from 'antd'
-import { DialogView, Autocomplete, ListView } from '../components'
+import { DialogView, Autocomplete, ListView } from '../../components'
 import { VIDEO_QUERY  } from './list-page-gql'
 import { VideoSchema } from './list-view-schema'
-import { GetAllVideosQuery } from '../api/gql-query-interfaces'
+import { GetAllVideosQuery } from '../../api/gql-query-interfaces'
 
 interface ListPageState {
   isDialogOpen: boolean
