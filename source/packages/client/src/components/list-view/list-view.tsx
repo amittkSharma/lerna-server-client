@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Table } from 'antd'
-import { Schema } from '../models/core'
+import { Schema } from '../../models/core'
 // tslint:disable-next-line:no-submodule-imports
 import { ColumnProps } from 'antd/lib/table/interface'
 

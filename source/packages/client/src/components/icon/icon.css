@@ -1,0 +1,25 @@
+.material-icons {
+  /* font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  padding: 5px; */
+
+  speak: none;
+  font-variant: normal;
+  vertical-align: baseline;
+  display: inline-block;
+}
+.button-icon {
+  padding-right: 6px;
+}
+.button-text {
+  vertical-align: top;
+  line-height: 26px;
+}
