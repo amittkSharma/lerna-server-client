@@ -1,14 +1,20 @@
 import * as React from 'react'
+import { Icon as AntIcon } from 'antd'
 import './icon.css'
 
-export type IconType = 'add' | 'backup' | 'edit' | 'event'  | 'filter_list' | 'menu' | 'settings'
+export type IconType = 'add' | 'backup' | 'edit' | 'event'  | 'filter' | 'menu' | 'settings'
 
 export interface IconProps {
   type: IconType
-  className?: string
+  style?: any
   iconClicked?: () => void
 }
 
 export const Icon = (props: IconProps) => (
-  <i className={`material-icons ${props.className}`} onClick={props.iconClicked}>{props.type}</i>
+  <AntIcon
+    type={props.type}
+    spin={true}
+    style={props.style}
+    onClick={props.iconClicked}
+  />
 )
